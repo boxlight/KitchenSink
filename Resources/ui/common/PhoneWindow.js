@@ -1,4 +1,5 @@
 function PhoneWindow(title) {
+	
 	var self = Ti.UI.createWindow({
 		title:title,
 		backgroundColor:'white'
@@ -82,7 +83,18 @@ function PhoneWindow(title) {
 	});
 	
 	// add table view to the window
-	self.add(tableview);
+	//self.add(tableview);
+	
+	
+	
+	
+	// WEBVIEW ~~~~
+	var webview = Ti.UI.createWebView({
+		backgroundColor:'white',
+		url:'html/phone.html'
+	});	
+	self.add(webview);
+	// ~~~~~~~~~~~~
 	
 	return self;
 };

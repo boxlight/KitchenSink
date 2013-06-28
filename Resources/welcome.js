@@ -22,7 +22,7 @@
 
 		// message
 		var message = Titanium.UI.createLabel({
-			text:'Appcelerator Titanium '+Titanium.version,
+			text:'Appcelerator Titaniumr '+Titanium.version,
 			color:'#fff',
 			textAlign:'center',
 			font:{fontSize:18,fontWeight:'bold'},

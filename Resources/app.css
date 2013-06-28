@@ -1,0 +1,8 @@
+body { font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; padding: 10px; }
+
+h1 { font-weight: normal; font-size: 1.2em; color: black; margin-bottom: 15px; }
+p { color: #666666; font-size: 0.85em; line-height: 1.4em; margin-bottom: 15px; }
+
+.centered { display: block; margin: 0 auto; }
+
+.demoImage { margin-top: 10px; }
