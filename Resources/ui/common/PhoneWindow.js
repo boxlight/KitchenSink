@@ -2,7 +2,7 @@ function PhoneWindow(title) {
 	
 	var self = Ti.UI.createWindow({
 		//Do not show title
-		//title:title,
+		title:'',
 		barImage:'images/boxlight/bl-nav-bar.png',
 		backgroundColor:'white',
 		barColor:'#0f0f0f'

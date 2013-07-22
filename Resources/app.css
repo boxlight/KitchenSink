@@ -1,6 +1,5 @@
 body {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	padding: 10px;
 	font-size: 13px;
 }
 h1 {
@@ -12,7 +11,10 @@ h1 {
 p {
 	color: #595959;
 	line-height: 20px;
+	margin-top: 18px;
 	margin-bottom: 15px;
+	margin-left: 20px;
+	margin-right: 20px;
 }
 
 p span.large {
@@ -22,10 +24,11 @@ p span.large {
 p.subheader {
 	font-size: 19px;
 	text-align: center;
+	margin-top: 29px;
+	margin-bottom: 30px;
 }
 
 p.chalkboard {
-	
     font-family: "Chalkboard";
 }
 .centered {
@@ -34,5 +37,5 @@ p.chalkboard {
 }
 
 .demoImage {
-	margin-top: 10px;
+	margin-top: 33px;
 }
