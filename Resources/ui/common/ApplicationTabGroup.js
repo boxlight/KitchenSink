@@ -18,6 +18,14 @@ function ApplicationTabGroup() {
 		mashupsWin = new MashupsWindow(L('mashups_win_title'));
 		//messageWin = new MessageWindow();
 	
+	var welcomeTab = Ti.UI.createTab({
+		title:L('welcome_win_title'),
+		icon:'/images/tabs/KS_nav_welcome.png',
+		window:welcomeWin
+	});
+	welcomeWin.containingTab = welcomeTab;
+	self.addTab(welcomeTab);
+	
 	var baseUITab = Ti.UI.createTab({
 		title: L('base_ui_title'),
 		icon: '/images/tabs/KS_nav_ui.png',
@@ -33,14 +41,6 @@ function ApplicationTabGroup() {
 	// });
 	// controlsWin.containingTab = controlsTab;
 	// self.addTab(controlsTab);
-	
-	var welcomeTab = Ti.UI.createTab({
-		title:L('welcome_win_title'),
-		icon:'/images/tabs/KS_nav_welcome.png',
-		window:welcomeWin
-	});
-	welcomeWin.containingTab = welcomeTab;
-	self.addTab(welcomeTab);
 	
 	var phoneTab = Ti.UI.createTab({
 		title:L('phone_win_title'),
@@ -58,7 +58,7 @@ function ApplicationTabGroup() {
 	mashupsWin.containingTab = mashupsTab;
 	self.addTab(mashupsTab);
 	
-	self.setActiveTab(2);
+	self.setActiveTab(0);
 	
 	
 	// Tabgroup events and message window
