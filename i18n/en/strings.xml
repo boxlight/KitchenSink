@@ -6,6 +6,6 @@
 	<string name="base_ui_title">Base UI</string>
 	<string name="controls_win_title">Controls</string> 
 	<string name="phone_win_title">Phone</string>
-	<string name="platform_win_title">Platform</string>
+	<string name="welcome_win_title">Welcome</string>
 	<string name="mashups_win_title">Mashups</string>
 </resources>

@@ -1,6 +1,6 @@
 function ApplicationWindow(title) {
 	var self = Ti.UI.createWindow({
-barColor:'#0f0f0f',
+		barColor:'#0f0f0f',
 		title:title,
 		backgroundColor:'white'
 	});
@@ -17,7 +17,7 @@ barColor:'#0f0f0f',
 		//containingTab attribute must be set by parent tab group on
 		//the window for this work
 		self.containingTab.open(Ti.UI.createWindow({
-barColor:'#0f0f0f',
+			barColor:'#0f0f0f',
 			title: L('newWindow'),
 			backgroundColor: 'white'
 		}));

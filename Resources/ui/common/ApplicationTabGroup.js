@@ -5,8 +5,8 @@ function ApplicationTabGroup() {
 	var self = Ti.UI.createTabGroup(),
 		BaseUIWindow = require('ui/common/BaseUIWindow'),
 		ControlsWindow = require('ui/common/ControlsWindow'),
+		WelcomeWindow = require('ui/common/WelcomeWindow'),
 		PhoneWindow = require('ui/common/PhoneWindow'),
-		PlatformWindow = require('ui/common/PlatformWindow'),
 		MashupsWindow = require('ui/common/MashupsWindow');
 		//MessageWindow = require('ui/common/MessageWindow');
 	
@@ -14,7 +14,7 @@ function ApplicationTabGroup() {
 	var baseUIWin = new BaseUIWindow(L('base_ui_title')),
 		controlsWin = new ControlsWindow(L('controls_win_title')),
 		phoneWin = new PhoneWindow(L('phone_win_title')),
-		platformWin = new PlatformWindow(L('platform_win_title')),
+		welcomeWin = new WelcomeWindow(L('welcome_win_title')),
 		mashupsWin = new MashupsWindow(L('mashups_win_title'));
 		//messageWin = new MessageWindow();
 	
@@ -34,6 +34,14 @@ function ApplicationTabGroup() {
 	controlsWin.containingTab = controlsTab;
 	self.addTab(controlsTab);
 	
+	var welcomeTab = Ti.UI.createTab({
+		title:L('welcome_win_title'),
+		icon:'/images/tabs/KS_nav_welcome.png',
+		window:welcomeWin
+	});
+	welcomeWin.containingTab = welcomeTab;
+	self.addTab(welcomeTab);
+	
 	var phoneTab = Ti.UI.createTab({
 		title:L('phone_win_title'),
 		icon:'/images/tabs/KS_nav_phone.png',
@@ -41,14 +49,6 @@ function ApplicationTabGroup() {
 	});
 	phoneWin.containingTab = phoneTab;
 	self.addTab(phoneTab);
-	
-	var platformTab = Ti.UI.createTab({
-		title:L('platform_win_title'),
-		icon:'/images/tabs/KS_nav_platform.png',
-		window:platformWin
-	});
-	platformWin.containingTab = platformTab;
-	self.addTab(platformTab);
 	
 	var mashupsTab = Ti.UI.createTab({
 		title:L('mashups_win_title'),
@@ -58,7 +58,7 @@ function ApplicationTabGroup() {
 	mashupsWin.containingTab = mashupsTab;
 	self.addTab(mashupsTab);
 	
-	self.setActiveTab(1);
+	self.setActiveTab(2);
 	
 	
 	// Tabgroup events and message window
@@ -131,7 +131,7 @@ function ApplicationTabGroup() {
 		}
 
 		// iOS fires with source tabGroup. Android with source tab
-		if ((e.source == baseUITab) || (e.source == controlsTab) || (e.source == phoneTab) || (e.source == platformTab) || (e.source == mashupsTab) || (e.source == self)) {
+		if ((e.source == baseUITab) || (e.source == controlsTab) || (e.source == phoneTab) || (e.source == welcomeTab) || (e.source == mashupsTab) || (e.source == self)) {
 
 			messageLabel.text = 'tab changed to ' + e.index + ' old index ' + e.previousIndex;
 			messageWin.open();

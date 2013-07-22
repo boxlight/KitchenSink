@@ -1,9 +1,7 @@
 function PhoneWindow(title) {
 	
 	var self = Ti.UI.createWindow({
-		//Do not show title
-		title:'',
-		barImage:'images/boxlight/bl-nav-bar.png',
+		title:title,
 		backgroundColor:'white',
 		barColor:'#0f0f0f'
 	});
@@ -86,18 +84,7 @@ function PhoneWindow(title) {
 	});
 	
 	// add table view to the window
-	//self.add(tableview);
-	
-	
-	
-	
-	// WEBVIEW ~~~~
-	var webview = Ti.UI.createWebView({
-		backgroundColor:'white',
-		url:'html/phone.html'
-	});	
-	self.add(webview);
-	// ~~~~~~~~~~~~
+	self.add(tableview);
 	
 	return self;
 };
