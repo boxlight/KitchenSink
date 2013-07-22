@@ -26,13 +26,13 @@ function ApplicationTabGroup() {
 	baseUIWin.containingTab = baseUITab;
 	self.addTab(baseUITab);
 	
-	var controlsTab = Ti.UI.createTab({
-		title: L('controls_win_title'),
-		icon: '/images/tabs/KS_nav_views.png',
-		window: controlsWin
-	});
-	controlsWin.containingTab = controlsTab;
-	self.addTab(controlsTab);
+	// var controlsTab = Ti.UI.createTab({
+		// title: L('controls_win_title'),
+		// icon: '/images/tabs/KS_nav_views.png',
+		// window: controlsWin
+	// });
+	// controlsWin.containingTab = controlsTab;
+	// self.addTab(controlsTab);
 	
 	var welcomeTab = Ti.UI.createTab({
 		title:L('welcome_win_title'),
@@ -131,7 +131,8 @@ function ApplicationTabGroup() {
 		}
 
 		// iOS fires with source tabGroup. Android with source tab
-		if ((e.source == baseUITab) || (e.source == controlsTab) || (e.source == phoneTab) || (e.source == welcomeTab) || (e.source == mashupsTab) || (e.source == self)) {
+		// if ((e.source == baseUITab) || (e.source == controlsTab) || (e.source == phoneTab) || (e.source == welcomeTab) || (e.source == mashupsTab) || (e.source == self)) {
+		if ((e.source == baseUITab) || (e.source == phoneTab) || (e.source == welcomeTab) || (e.source == mashupsTab) || (e.source == self)) {
 
 			messageLabel.text = 'tab changed to ' + e.index + ' old index ' + e.previousIndex;
 			messageWin.open();
