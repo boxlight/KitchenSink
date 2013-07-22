@@ -183,6 +183,7 @@ function list_updateitems(_args) {
 		softInput = Ti.UI.Android.SOFT_INPUT_ADJUST_PAN
 	}
 	var win = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		title:'Update Items',
 		windowSoftInputMode:softInput
 	});

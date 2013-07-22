@@ -20,6 +20,7 @@ function getInitSection(){
 
 function list_replace_section(_args) {
 	var win = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		title:'Replace Section'
 	});
 	

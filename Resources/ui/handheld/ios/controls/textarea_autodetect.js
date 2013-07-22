@@ -1,6 +1,7 @@
 function textarea_auto(_args) {
 	//TODO Update before 2.2.0 Release to use Ti.UI.AUTOLINK constants
 	var win = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		title:_args.title
 	});
 	win.backgroundColor = 'white';

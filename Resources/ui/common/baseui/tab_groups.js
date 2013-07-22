@@ -1,5 +1,6 @@
 function tab_group(_args) {
 	var win = Titanium.UI.createWindow({
+barColor:'#0f0f0f',
 		title:_args.title
 	});
 	
@@ -21,7 +22,8 @@ function tab_group(_args) {
 	{
 		if (tabGroup.tabs.length == 5)
 		{
-			var win = Ti.UI.createWindow({title:'New Tab Window',barColor:'#000'});
+			var win = Ti.UI.createWindow({
+barColor:'#0f0f0f',title:'New Tab Window',barColor:'#000'});
 			var newtab = Titanium.UI.createTab({  
 				icon:'/images/tabs/KS_nav_mashup.png',
 				title:'New Tab',

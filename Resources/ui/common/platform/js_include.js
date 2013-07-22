@@ -2,6 +2,7 @@ function js_include(_args) {
 	Titanium.include('/etc/my_js_include.js', '/etc/my_js_include_2.js', '/etc/local_include.js');
 	
 	var self = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		title:_args.title
 	});
 	

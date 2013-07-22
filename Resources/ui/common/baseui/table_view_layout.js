@@ -1,6 +1,7 @@
 	//FIXME: JGH redo
 function tv_layout(_args) {
 	var win = Titanium.UI.createWindow({
+barColor:'#0f0f0f',
 		title:_args.title
 	});
 	win.backgroundImage = '/images/tableview/brown_bg_482.png';

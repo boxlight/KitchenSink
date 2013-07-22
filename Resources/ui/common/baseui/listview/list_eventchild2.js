@@ -64,6 +64,7 @@ function genTest(win){
 
 function list_eventchild(_args) {
 	var win = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		title:'EVENT INTERACTION',
 		layout:'vertical'
 	});

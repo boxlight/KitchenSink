@@ -3,6 +3,7 @@
 	//  and the table view has no table view header - the header should be displayed
 function tv_section_header(_args) {
 	var win = Titanium.UI.createWindow({
+barColor:'#0f0f0f',
 		title:_args.title
 	});
 	

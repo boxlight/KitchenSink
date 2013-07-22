@@ -1,5 +1,6 @@
 function tv_api_controls(_args) {
 	var win = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		title:_args.title
 	});
 	// create table view data object
@@ -80,6 +81,7 @@ function tv_api_controls(_args) {
 	// that displays the time it took to build the table and show it
 	
 	var messageWin = Titanium.UI.createWindow({
+barColor:'#0f0f0f',
 		height:30,
 		width:200,
 		bottom:70,

@@ -1,5 +1,6 @@
 function win_construct(_args) {
 	var win = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		title:_args.title
 	});
 	var label = Titanium.UI.createLabel({
@@ -33,6 +34,7 @@ function win_construct(_args) {
 		// create window with right nav button 
 		//
 		var win = Titanium.UI.createWindow({
+barColor:'#0f0f0f',
 			rightNavButton:bb,
 			backgroundColor:'#13386c',
 			barColor:'#336699',

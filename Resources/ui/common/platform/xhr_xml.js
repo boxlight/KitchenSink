@@ -1,5 +1,6 @@
 function xhr_xml(_args) {
 	var self = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		title:_args.title
 	});
 	var xhr = Titanium.Network.createHTTPClient();

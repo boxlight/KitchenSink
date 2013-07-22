@@ -4,7 +4,8 @@ function MessageWindow() {
 		width:250,
 		bottom:70,
 		borderRadius:10,
-		touchEnabled:false,	
+		touchEnabled:false,
+		barColor:'#0f0f0f'
 		//The messageWindow should take the same orientation of its parent window, 
 		//we should not try specifying anything here.
 		//orientationModes : [Titanium.UI.PORTRAIT]

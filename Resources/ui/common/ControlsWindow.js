@@ -1,7 +1,8 @@
 function ControlsWindow(title) {
 	var self = Ti.UI.createWindow({
 		title:title,
-		backgroundColor:'white'
+		backgroundColor:'white',
+		barColor:'#0f0f0f'
 	});
 	
 	// create table view data object

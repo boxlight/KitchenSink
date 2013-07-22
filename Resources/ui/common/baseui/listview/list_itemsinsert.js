@@ -19,6 +19,7 @@ function getData(){
 
 function list_insertitems(_args) {
 	var win = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		title:'Insert Items'
 	});
 	var myTemplate = {

@@ -1,5 +1,6 @@
 function image_view_scale(_args) {
 	var win = Titanium.UI.createWindow({
+barColor:'#0f0f0f',
 		title:_args.title
 	});
 	var TIMEOUT_SECS = 2;

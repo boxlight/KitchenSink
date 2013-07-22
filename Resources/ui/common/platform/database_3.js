@@ -1,5 +1,6 @@
 function db3(_args) {
 	var self = Titanium.UI.createWindow({
+barColor:'#0f0f0f',
 		title:_args.title,
 		height:30,
 		width:280,

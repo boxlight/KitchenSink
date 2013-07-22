@@ -1,5 +1,6 @@
 function tv_noscroll(_args) {
 	var w = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		title:_args.title
 	});
 	var search = Titanium.UI.createSearchBar({

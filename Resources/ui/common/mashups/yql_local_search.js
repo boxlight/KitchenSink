@@ -1,5 +1,6 @@
 function local_search(_args) {
 	var self = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		title:_args.title,
 		backgroundColor:'#fff'
 	});
@@ -28,7 +29,8 @@ function local_search(_args) {
 	
 	
 	function loadWebView(url, placeName) {
-		var win = Ti.UI.createWindow({fullscreen:false, navBarHidden:false, title: placeName});
+		var win = Ti.UI.createWindow({
+barColor:'#0f0f0f',fullscreen:false, navBarHidden:false, title: placeName});
 		var wv = Ti.UI.createWebView({
 			url: url,
 			left: 0, right: 0, top: 0, bottom: 0

@@ -4,6 +4,7 @@ function movie_remote2(_args) {
 	// dynamic url with dynamic encoding (from kosso)
 	var media_url = "http://phreadz.com/service/encoder.php?g=5LPOKP754&iph=1";
 	var win = Titanium.UI.createWindow({
+barColor:'#0f0f0f',
 		title:_args.title
 	});
 	

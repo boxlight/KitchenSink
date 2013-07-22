@@ -4,6 +4,7 @@
 	//http://cocoawithlove.com/2009/04/easy-custom-uitableview-drawing.html
 function tv_layout4(_args) {
 	var win = Titanium.UI.createWindow({
+barColor:'#0f0f0f',
 		title:_args.title
 	});
 	win.backgroundImage = '/images/tableview/easycustom/gradientBackground.png';

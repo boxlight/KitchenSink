@@ -117,6 +117,7 @@ function getDataDefaultTemplate(){
 
 function list_basic(_args) {
 	var win = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		title:'Built in Templates'
 	});
 	

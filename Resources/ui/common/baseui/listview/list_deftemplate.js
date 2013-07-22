@@ -1,5 +1,6 @@
 function list_background_color(_args) {
 	var win = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		title:'Default Template',
 		layout:'vertical',
 		orientationModes:[Ti.UI.PORTRAIT,Ti.UI.LANDSCAPE_LEFT,Ti.UI.LANDSCAPE_RIGHT]

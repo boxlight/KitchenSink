@@ -13,6 +13,7 @@ function getSection(count){
 
 function list_append_section(_args) {
 	var win = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		title:'Append Section',
 		layout:'vertical'
 	});

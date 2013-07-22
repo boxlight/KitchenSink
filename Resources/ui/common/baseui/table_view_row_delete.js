@@ -1,5 +1,6 @@
 function tv_row_delete(_args) {
 	var win = Titanium.UI.createWindow({
+barColor:'#0f0f0f',
 		title:_args.title
 	});
 	

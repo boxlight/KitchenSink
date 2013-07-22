@@ -8,6 +8,7 @@ function getData(){
 
 function list_getitems(_args) {
 	var win = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		title:'Get Items'
 	});
 	

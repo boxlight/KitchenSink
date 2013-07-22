@@ -1,5 +1,6 @@
 function transition(_args) {
 	var win = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		title:_args.title
 	});
 	
@@ -41,6 +42,7 @@ function transition(_args) {
 	b1.addEventListener('click', function()
 	{
 		var w = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 			backgroundColor:'#13386c'
 		});
 	

@@ -1,5 +1,6 @@
 function music_picker(_args) {
 	var win = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		title:_args.title
 	});
 	
@@ -212,6 +213,7 @@ function music_picker(_args) {
 	// MODAL SETTINGS BIT...
 	//	
 	var settingsWindow = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		backgroundColor:'#fff',
 		title:'Picker settings'
 	});

@@ -1,6 +1,7 @@
 function SenchaTouch(_args) {
 	var indicator;
 	var win = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		title:_args.title,
 		backgroundColor: '#fff'
 	});

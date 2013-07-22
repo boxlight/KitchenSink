@@ -1,5 +1,6 @@
 function xml_rss(_args) {
 	var win = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		title:_args.title
 	});
 	
@@ -64,7 +65,8 @@ function xml_rss(_args) {
 			win.add(tableview);
 			tableview.addEventListener('click',function(e)
 			{
-				var w = Ti.UI.createWindow({title:doctitle});
+				var w = Ti.UI.createWindow({
+barColor:'#0f0f0f',title:doctitle});
 				var wb = Ti.UI.createWebView({url:e.row.url});
 				w.add(wb);
 				var b = Titanium.UI.createButton({

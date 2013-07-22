@@ -1,5 +1,6 @@
 function gradient(_args) {
 	var win = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		title:_args.title
 	});
 	var view1 = Ti.UI.createView({

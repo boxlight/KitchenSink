@@ -1,5 +1,6 @@
 function modal_windows(_args) {
 	var win = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		title:_args.title
 	});
 	win.backgroundColor = 'black';
@@ -40,6 +41,7 @@ function modal_windows(_args) {
 		var style = picker.getSelectedRow(0).style;
 		var presentation = picker.getSelectedRow(1).presentation;
 		var w = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 			backgroundColor:'purple'
 		});
 		var b = Ti.UI.createButton({

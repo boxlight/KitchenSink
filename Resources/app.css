@@ -1,8 +1,38 @@
-body { font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; padding: 10px; }
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	padding: 10px;
+	font-size: 13px;
+}
+h1 {
+	font-weight: normal;
+	font-size: 1.2em;
+	color: black;
+	margin-bottom: 15px;
+}
+p {
+	color: #595959;
+	line-height: 20px;
+	margin-bottom: 15px;
+}
 
-h1 { font-weight: normal; font-size: 1.2em; color: black; margin-bottom: 15px; }
-p { color: #666666; font-size: 0.85em; line-height: 1.4em; margin-bottom: 15px; }
+p span.large {
+	font-size: 18px;
+}
 
-.centered { display: block; margin: 0 auto; }
+p.subheader {
+	font-size: 19px;
+	text-align: center;
+}
 
-.demoImage { margin-top: 10px; }
+p.chalkboard {
+	
+    font-family: "Chalkboard";
+}
+.centered {
+	display: block;
+	margin: 0 auto;
+}
+
+.demoImage {
+	margin-top: 10px;
+}

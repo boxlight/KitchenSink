@@ -1,5 +1,6 @@
 function tv_layout3(_args) {
 	var win = Titanium.UI.createWindow({
+barColor:'#0f0f0f',
 		title:_args.title
 	});
 	win.backgroundImage='/images/chip.jpg';

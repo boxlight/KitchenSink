@@ -1,5 +1,6 @@
 function list_views(_args) {
 	var win = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		title:_args.title
 	});
 	if (Ti.Platform.name == 'android') 

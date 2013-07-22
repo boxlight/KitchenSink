@@ -44,6 +44,7 @@ function getListView(style){
 
 function list_headers_footers(_args) {
 	var win = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		title:'Headers & Footers'
 	});
 	

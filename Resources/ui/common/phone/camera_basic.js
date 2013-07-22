@@ -52,6 +52,7 @@ function fireUpTheCamera() {
 
 function cam_basic(_args) {
 	win = Titanium.UI.createWindow({
+barColor:'#0f0f0f',
 		title:_args.title
 	});
 	if (Ti.Platform.osname === 'android') {

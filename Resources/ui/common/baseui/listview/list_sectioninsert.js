@@ -21,6 +21,7 @@ function getInitSection(){
 
 function list_insert_section(_args) {
 	var win = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		title:'Insert Section'
 	});
 	

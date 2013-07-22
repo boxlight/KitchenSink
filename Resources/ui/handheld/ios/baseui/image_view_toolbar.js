@@ -1,6 +1,7 @@
 	// attempt to simulate a changing of image on toolbar
 function image_view_toolbar(_args) {
 	var win = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		title:_args.title
 	});
 

@@ -3,6 +3,7 @@
 	// window which also has a nav bar, we ask him to hide it
 function navgroup(_args) {
 	var win = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		title:_args.title
 	});
 	var open = Ti.UI.createButton({
@@ -17,10 +18,12 @@ function navgroup(_args) {
 	win.add(open);
 	
 	var modal = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		navBarHidden:true
 	});
 	
 	var modalWin = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		backgroundColor:"red"
 	});
 	
@@ -56,6 +59,7 @@ function navgroup(_args) {
 			nav.close(w,{animated:false});
 		});
 		var w = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 			title:e.rowData.title,
 			rightNavButton:b
 		});

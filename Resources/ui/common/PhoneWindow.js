@@ -1,8 +1,11 @@
 function PhoneWindow(title) {
 	
 	var self = Ti.UI.createWindow({
-		title:title,
-		backgroundColor:'white'
+		//Do not show title
+		//title:title,
+		barImage:'images/boxlight/bl-nav-bar.png',
+		backgroundColor:'white',
+		barColor:'#0f0f0f'
 	});
 	
 	var isMobileWeb = Titanium.Platform.osname == 'mobileweb';

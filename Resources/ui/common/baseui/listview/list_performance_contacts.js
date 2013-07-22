@@ -128,6 +128,7 @@ function performAddressBookFunction(win){
 
 function list_performance_contacts(_args) {
 	var win = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		title:'Contacts Test',
 		orientationModes:[Ti.UI.PORTRAIT],
 		layout:'vertical'

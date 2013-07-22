@@ -1,5 +1,6 @@
 function webviews(_args) {
 	var win = Titanium.UI.createWindow({
+barColor:'#0f0f0f',
 		title:_args.title,
 		backgroundColor:'#fff'
 	});
@@ -67,6 +68,7 @@ function webviews(_args) {
 		var rowdata = e.rowData;
 		var webview = null;
 		var w = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 			title: e.rowData.title,
 			activity : {
 				onCreateOptionsMenu : function(e) {

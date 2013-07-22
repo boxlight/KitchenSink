@@ -1,5 +1,6 @@
 function view_anim(_args) {
 	var win = Titanium.UI.createWindow({
+barColor:'#0f0f0f',
 		title:_args.title
 	});
 	
@@ -9,6 +10,7 @@ function view_anim(_args) {
 	// create tip (window + view + label)
 	//
 	var winContainer = Titanium.UI.createWindow({
+barColor:'#0f0f0f',
 		height:30,
 		width:200,
 		bottom:100

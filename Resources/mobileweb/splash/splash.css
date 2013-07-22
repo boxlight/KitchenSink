@@ -1,68 +1,90 @@
-	#splash {
-		background: #000;
-		bottom: 0;
-		min-height: 300px;
-		left: 0;
-		position: fixed;
-		right: 0;
-		top: 0;
-		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	}
-	
-	#wrap {
-		position: relative;
-		top: 40%;
-	}
+#splash {
+	background: #000;
+	bottom: 0;
+	min-height: 300px;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
-	h1,h2 {
-		text-transform: uppercase;
-		font-weight: normal;
-	}
+#wrap {
+	position: relative;
+	top: 40%;
+}
 
-	h1,h2,p {
-		text-align: center;  
-		color: white;
-	}
+h1, h2 {
+	text-transform: uppercase;
+	font-weight: normal;
+}
 
-	h1 { background: url("boxlight.png") no-repeat scroll 0 0 black; margin: 0 auto; text-indent: -77777px; width: 185px; height: 35px; }
-	h2 { color: #AAA; font-size: 1em; letter-spacing: 2px; margin: 0; padding: 0; }
-	p { font-size: 0.8em; margin-top: 60px; 
-	  -webkit-animation: myanim 5s; /* Chrome, Safari 5+ */
-	     -moz-animation: myanim 5s; /* Firefox 5-15 */
-	       -o-animation: myanim 5s; /* Opera 12.00 */
-	          animation: myanim 5s; /* Chrome, Firefox 16+, IE 10+, Opera 12.10+ */		
-	}
-	
-	@-webkit-keyframes myanim {
-	  0%   { opacity: 0.0; }
-	  50%  { opacity: 0.5; }
-	  100% { opacity: 1.0; }
-	}
-	
-	@-moz-keyframes myanim {
-	  0%   { opacity: 0.0; }
-	  50%  { opacity: 0.5; }
-	  100% { opacity: 1.0; }
-	}
-	
-	@-o-keyframes myanim {
-	  0%   { opacity: 0.0; }
-	  50%  { opacity: 0.5; }
-	  100% { opacity: 1.0; }
-	}	
-	
-	@keyframes myanim {
-	  0%   { opacity: 0.0; }
-	  50%  { opacity: 0.5; }
-	  100% { opacity: 1.0; }
-	}	
+h1, h2, p {
+	text-align: center;
+	color: white;
+}
 
-	@media all and (max-height: 320px) {
-		#splash:before { top: 15%; }
-		#splash:after { bottom: 12%; }
-	}
+h1 {
+	background: url("boxlight.png") no-repeat scroll 0 0 black;
+	margin: 0 auto;
+	text-indent: -77777px;
+	width: 185px;
+	height: 35px;
+}
+h2 {
+	color: #AAA;
+	font-size: 1em;
+	letter-spacing: 2px;
+	margin: 0;
+	padding: 0;
+}
+p {
+	font-size: 0.8em;
+	margin-top: 60px;
+	-webkit-animation: myanim 5s; /* Chrome, Safari 5+ */
+	-moz-animation: myanim 5s; /* Firefox 5-15 */
+	-o-animation: myanim 5s; /* Opera 12.00 */
+	animation: myanim 5s; /* Chrome, Firefox 16+, IE 10+, Opera 12.10+ */
+}
 
-	@media all and (min-height: 699px) {
-		#splash:before { top: 25%; }
-		#splash:after { bottom: 25%; }
+@-webkit-keyframes myanim {
+0%   { opacity: 0.0; }
+50%  { opacity: 0.5; }
+100% { opacity: 1.0; }
+}
+
+@-moz-keyframes myanim {
+0%   { opacity: 0.0; }
+50%  { opacity: 0.5; }
+100% { opacity: 1.0; }
+}
+
+@-o-keyframes myanim {
+0%   { opacity: 0.0; }
+50%  { opacity: 0.5; }
+100% { opacity: 1.0; }
+}
+
+@keyframes myanim {
+0%   { opacity: 0.0; }
+50%  { opacity: 0.5; }
+100% { opacity: 1.0; }
+}
+
+@media all and (max-height: 320px) {
+	#splash:before {
+		top: 15%;
 	}
+	#splash:after {
+		bottom: 12%;
+	}
+}
+
+@media all and (min-height: 699px) {
+	#splash:before {
+		top: 25%;
+	}
+	#splash:after {
+		bottom: 25%;
+	}
+}

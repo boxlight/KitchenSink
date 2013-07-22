@@ -42,6 +42,7 @@ function getData(){
 
 function list_deleteitems(_args) {
 	var win = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		title:'Delete Items'
 	});
 	

@@ -1,5 +1,6 @@
 function contacts_picker(_args) {
 	var win = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		title:_args.title
 	});
 	

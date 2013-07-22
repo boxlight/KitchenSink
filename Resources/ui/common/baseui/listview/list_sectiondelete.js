@@ -7,6 +7,7 @@ function getSection(count){
 
 function list_delete_section(_args) {
 	var win = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		title:'Delete Section',
 	});
 	

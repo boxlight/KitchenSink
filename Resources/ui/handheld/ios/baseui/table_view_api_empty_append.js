@@ -1,5 +1,6 @@
 function tv_api_append(_args) {
 	var win = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		title:_args.title
 	});
 	// create table view with empty data set and then append

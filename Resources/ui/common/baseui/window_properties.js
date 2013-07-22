@@ -1,6 +1,7 @@
 function win_props(_args) {
 	// current window
 	var win = Titanium.UI.createWindow({
+barColor:'#0f0f0f',
 		title:_args.title
 	});
 	
@@ -113,6 +114,7 @@ function win_props(_args) {
 		if (layout)
 		{
 			win1 = Titanium.UI.createWindow({
+barColor:'#0f0f0f',
 				height:50,
 				width:200,
 				bottom:50,
@@ -122,6 +124,7 @@ function win_props(_args) {
 				zIndex:3
 			});
 			win2 = Titanium.UI.createWindow({
+barColor:'#0f0f0f',
 				height:50,
 				width:200,
 				bottom:60,

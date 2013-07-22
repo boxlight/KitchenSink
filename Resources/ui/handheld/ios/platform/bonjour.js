@@ -1,5 +1,6 @@
 function bonjour(_args) {
 	var win = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		title:_args.title
 	});
 	// Publish a local service on startup

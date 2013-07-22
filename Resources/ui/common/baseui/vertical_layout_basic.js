@@ -1,5 +1,6 @@
 function vertical_layout_basic(_args) {
 	var win = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		title:_args.title
 	});
 	win.layout = 'vertical';

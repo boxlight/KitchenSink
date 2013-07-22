@@ -38,6 +38,7 @@ function openGallery() {
 
 function photo_gallery(_args) {
 	var win = Titanium.UI.createWindow({
+barColor:'#0f0f0f',
 		title:_args.title
 	});
 	imageView = Titanium.UI.createImageView({

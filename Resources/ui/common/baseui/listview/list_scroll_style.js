@@ -1,5 +1,6 @@
 function list_scroll_style(_args) {
 	var win = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		title:'Scroll Style'
 	});
 	

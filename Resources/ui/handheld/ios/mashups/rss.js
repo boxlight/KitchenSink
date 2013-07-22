@@ -22,6 +22,7 @@ function rss(_args) {
 	var feedTitle = '';
 	
 	var self = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		barColor:'#b4000'
 	})
 	

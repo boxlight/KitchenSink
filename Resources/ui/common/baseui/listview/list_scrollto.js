@@ -22,6 +22,7 @@ function genSections()
 
 function list_scrollto(_args) {
 	var win = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		title:'Scroll To',
 		orientationModes:[Ti.UI.PORTRAIT],
 		layout:'vertical'

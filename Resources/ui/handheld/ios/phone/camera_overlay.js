@@ -1,6 +1,7 @@
 function cam_overlay(_args) {
 	container ={};
 	container.win = Titanium.UI.createWindow({
+barColor:'#0f0f0f',
 		title:_args.title
 	});
 	

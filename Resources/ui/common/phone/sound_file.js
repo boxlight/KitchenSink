@@ -1,5 +1,6 @@
 function sound_file(_args) {
 	var win = Titanium.UI.createWindow({
+barColor:'#0f0f0f',
 		title:_args.title
 	});
 	var timob7502fix = ((Ti.version >= '3.0.0') && (Titanium.Platform.name == 'iPhone OS'));

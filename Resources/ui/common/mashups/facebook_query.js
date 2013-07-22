@@ -9,6 +9,7 @@ function fb_query(_args) {
 	}
 
 	var win = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		title:_args.title,
 		backgroundColor:'#fff'
 	});
@@ -35,7 +36,8 @@ function fb_query(_args) {
 		b1.title = 'Loading...';
 	
 		var tableView = Ti.UI.createTableView({minRowHeight:100});
-		var win = Ti.UI.createWindow({title:'Facebook Query'});
+		var win = Ti.UI.createWindow({
+barColor:'#0f0f0f',title:'Facebook Query'});
 		win.add(tableView);
 	
 		// create close button on window nav

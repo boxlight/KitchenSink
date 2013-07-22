@@ -1,5 +1,6 @@
 function gallery_xhr(_args) {
 	var win = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		title:_args.title
 	});
 	var xhr = Titanium.Network.createHTTPClient();

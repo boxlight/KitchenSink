@@ -5,6 +5,7 @@
 	//
 function win_standalone(_args) {	
 	var win = Titanium.UI.createWindow({
+barColor:'#0f0f0f',
 		title:_args.title
 	});
 	
@@ -33,6 +34,7 @@ function win_standalone(_args) {
 	{
 	
 		var w = Titanium.UI.createWindow({
+barColor:'#0f0f0f',
 			backgroundColor:'#336699'
 		});
 	
@@ -145,6 +147,7 @@ function win_standalone(_args) {
 		t = t.scale(0);
 	
 		var w = Titanium.UI.createWindow({
+barColor:'#0f0f0f',
 			backgroundColor:'#336699',
 			borderWidth:8,
 			borderColor:'#999',
@@ -204,6 +207,7 @@ function win_standalone(_args) {
 	b5.addEventListener('click', function()
 	{
 		var w = Titanium.UI.createWindow({
+barColor:'#0f0f0f',
 			top:Ti.Platform.displayCaps.platformHeight,
 			backgroundColor:'#000',
 		});
@@ -256,6 +260,7 @@ function win_standalone(_args) {
 	b6.addEventListener('click', function()
 	{
 		var w = Titanium.UI.createWindow({
+barColor:'#0f0f0f',
 			title: 'New Window (Fullscreen)',
 			backgroundColor:'#336699'
 		});
@@ -308,6 +313,7 @@ function win_standalone(_args) {
 	
 	
 		var w = Titanium.UI.createWindow({
+barColor:'#0f0f0f',
 			backgroundColor:'#336699'
 		});
 		close.addEventListener('click', function()
@@ -348,6 +354,7 @@ function win_standalone(_args) {
 	var t = Titanium.UI.create2DMatrix();
 	t= t.rotate(-90);
 	var menuWin = Titanium.UI.createWindow({
+barColor:'#0f0f0f',
 		backgroundImage:'/images/menubox.png',
 		height:178,
 		width:204,
@@ -418,7 +425,8 @@ function win_standalone(_args) {
 	
 		b8.addEventListener('click', function()
 		{
-			var w = Ti.UI.createWindow({backgroundColor:"red"});
+			var w = Ti.UI.createWindow({
+barColor:'#0f0f0f',backgroundColor:"red"});
 			var b = Ti.UI.createButton({
 				title:"Close with Animation",
 				width:180,
@@ -434,7 +442,8 @@ function win_standalone(_args) {
 	
 		b9.addEventListener('click', function()
 		{
-			var w = Ti.UI.createWindow({backgroundColor:"red"});
+			var w = Ti.UI.createWindow({
+barColor:'#0f0f0f',backgroundColor:"red"});
 			var b = Ti.UI.createButton({
 				title:"Close w/o Animation",
 				width:180,

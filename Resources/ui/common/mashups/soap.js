@@ -1,6 +1,7 @@
 function soap(_args) {
 	Ti.include('/ui/common/mashups/suds.js');
 	var window = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		title:_args.title
 	});
 	var label = Ti.UI.createLabel({

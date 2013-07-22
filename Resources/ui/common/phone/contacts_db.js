@@ -1,5 +1,6 @@
 function contacts_db(_args) {
 	var win = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		title:_args.title
 	});
 	var android = (Ti.Platform.osname === 'android');
@@ -29,6 +30,7 @@ function contacts_db(_args) {
 			});
 			rows[i].addEventListener('click', function(e) {
 				var display = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 					backroundColor:'white',
 					title:e.row.person.fullName
 				});

@@ -51,6 +51,7 @@ function setupTest(win){
 
 function list_performance_remote(_args) {
 	var win = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		title:'Remote Image Test',
 		orientationModes:[Ti.UI.PORTRAIT],
 		layout:'vertical'

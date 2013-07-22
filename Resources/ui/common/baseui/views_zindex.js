@@ -1,5 +1,6 @@
 function views_zindex(_args) {
 	var win = Ti.UI.createWindow({
+barColor:'#0f0f0f',
 		title:_args.title
 	});
 	var scrollView = Ti.UI.createScrollView({height:200,top:0});
