@@ -14,19 +14,21 @@ function facebook_test(_args) {
 		hasChild : true,
 		test : 'ui/common/mashups/facebook_query'
 	}, {
-		title : 'View Albums',
+		title : 'Albums',
 		hasChild : true,
 		test : 'ui/common/mashups/facebook_albums'
 	}
-	// , {
-		// title : 'Publish Stream',
-		// hasChild : true,
-		// test : 'ui/common/mashups/facebook_publish_stream'
-	// }, {
-		// title : 'Photos',
-		// hasChild : true,
-		// test : 'ui/common/mashups/facebook_photos'
-	// }
+	/*
+	, {
+		title : 'Publish Stream',
+		hasChild : true,
+		test : 'ui/common/mashups/facebook_publish_stream'
+	}, {
+		title : 'Photos',
+		hasChild : true,
+		test : 'ui/common/mashups/facebook_photo_upload'
+	}
+	*/
 	];
 
 	// create table view
@@ -45,7 +47,8 @@ function facebook_test(_args) {
 	tableview.addEventListener('click', function(e) {
 		if (e.rowData.test) {
 			var ExampleWindow = require(e.rowData.test), win = new ExampleWindow({
-				title : e.rowData.title
+				title : e.rowData.title,
+				containingTab: self.containingTab
 			});
 			_args.containingTab.open(win, {
 				animated : true

@@ -30,7 +30,6 @@ function fb_album_query(_args) {
 			albums : 'SELECT aid, object_id, cover_pid, name, created FROM album WHERE owner = me()',
 			covers : 'SELECT aid, src FROM photo WHERE pid in (SELECT cover_pid FROM #albums)'
 		};
-		Ti.API.info('user id ' + facebook.uid);
 		facebook.request('fql.multiquery', {
 			queries : queries
 		}, function(r) {
@@ -100,11 +99,12 @@ function fb_album_query(_args) {
 					top : 5,
 					right : 5,
 					height : 20,
-					color : '#576996',
+					color : '#576996',	
 					text : row.name
 				});
 				albumRow.add(nameLabel);
 
+				albumRow.albumTitle = row.name;
 				albumRow.aid = row.id;
 
 				data[c] = albumRow;
@@ -112,6 +112,20 @@ function fb_album_query(_args) {
 
 			tableView.setData(data, {
 				animationStyle : Titanium.UI.iPhone.RowAnimationStyle.DOWN
+			});
+
+			tableView.addEventListener('click', function(e) {
+				if (e.rowData.aid) {
+					var FacebookPhotoWindow = require('ui/common/mashups/facebook_photos');
+					var photoWin = new FacebookPhotoWindow({
+						title : e.rowData.albumTitle,
+						aid: e.rowData.aid,
+					});
+					
+					Ti.API._activeTab.open(photoWin, {
+						animated : true
+					});
+				}
 			});
 
 			win.open({
