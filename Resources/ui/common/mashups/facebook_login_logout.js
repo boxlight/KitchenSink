@@ -9,13 +9,13 @@ function fb_login_logout(_args) {
 	}
 
 	var win = Ti.UI.createWindow({
-barColor:'#0f0f0f',
+		barColor:'#0f0f0f',
 		title:_args.title,
 		backgroundColor:'#fff'
 	});
 
-	facebook.appid = '495338853813822';
-	facebook.permissions = ['publish_stream', 'read_stream'];
+	facebook.appid = '199171466912517';
+	facebook.permissions = ['publish_stream', 'read_stream', 'user_photos'];
 
 	//
 	// Login Status

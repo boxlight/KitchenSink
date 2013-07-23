@@ -35,6 +35,7 @@
             <orientation>Ti.UI.LANDSCAPE_LEFT</orientation>
             <orientation>Ti.UI.LANDSCAPE_RIGHT</orientation>
         </orientations>
+        <property name="ti.facebook.appid">199171466912517</property>
     </iphone>
     <android xmlns:android="http://schemas.android.com/apk/res/android">
         <manifest>
