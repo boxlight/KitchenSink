@@ -5,25 +5,29 @@ function facebook_test(_args) {
 		backgroundColor : '#fff'
 	});
 	//create table view data object
-	var data = [{
-		title : 'Login/Logout',
-		hasChild : true,
-		test : 'ui/common/mashups/facebook_login_logout'
-	}, {
-		title : 'Friends',
-		hasChild : true,
-		test : 'ui/common/mashups/facebook_query'
-	}, {
-		title : 'Albums',
-		hasChild : true,
-		test : 'ui/common/mashups/facebook_albums'
-	}
+	var data = [
+		{
+			title : 'Login/Logout',
+			hasChild : true,
+			test : 'ui/common/mashups/facebook_login_logout'
+		},
+		{
+			title : 'Friends',
+			hasChild : true,
+			test : 'ui/common/mashups/facebook_query'
+		},
+		{
+			title : 'Albums',
+			hasChild : true,
+			test : 'ui/common/mashups/facebook_albums'
+		},
+		{
+			title : 'Publish Stream',
+			hasChild : true,
+			test : 'ui/common/mashups/facebook_publish_stream'
+		}
 	/*
 	, {
-		title : 'Publish Stream',
-		hasChild : true,
-		test : 'ui/common/mashups/facebook_publish_stream'
-	}, {
 		title : 'Photos',
 		hasChild : true,
 		test : 'ui/common/mashups/facebook_photo_upload'
