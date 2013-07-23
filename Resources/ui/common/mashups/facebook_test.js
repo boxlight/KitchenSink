@@ -14,9 +14,9 @@ function facebook_test(_args) {
 		hasChild : true,
 		test : 'ui/common/mashups/facebook_query'
 	}, {
-		title : 'View Photos',
+		title : 'View Albums',
 		hasChild : true,
-		test : 'ui/common/mashups/facebook_properties'
+		test : 'ui/common/mashups/facebook_albums'
 	}
 	// , {
 		// title : 'Publish Stream',
