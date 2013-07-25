@@ -60,35 +60,6 @@ function ApplicationTabGroup() {
 	
 	self.setActiveTab(0);
 	
-	
-	// Tabgroup events and message window
-	messageWin = Titanium.UI.createWindow({
-		height:30,
-		width:250,
-		bottom:70,
-		borderRadius:10,
-		touchEnabled:false,
-		orientationModes : [
-			Titanium.UI.PORTRAIT,
-			Titanium.UI.UPSIDE_PORTRAIT,
-			Titanium.UI.LANDSCAPE_LEFT,
-			Titanium.UI.LANDSCAPE_RIGHT
-		]
-	});
-	if (Ti.Platform.osname === 'iphone') {
-		messageWin.orientationModes = [Ti.UI.PORTRAIT]
-	}
-	
-	var messageView = Titanium.UI.createView({
-		id:'messageview',
-		height:30,
-		width:250,
-		borderRadius:10,
-		backgroundColor:'#000',
-		opacity:0.7,
-		touchEnabled:false
-	});
-		
 	var messageLabel = Titanium.UI.createLabel({
 		id:'messagelabel',
 		text:'',
@@ -101,8 +72,6 @@ function ApplicationTabGroup() {
 		},
 		textAlign:'center'
 	});
-	messageWin.add(messageView);
-	messageWin.add(messageLabel);
 	
 	self.addEventListener('close', function(e) {
 		if (e.source == self){
@@ -115,12 +84,6 @@ function ApplicationTabGroup() {
 	self.addEventListener('open',function(e) {
 		if (e.source == self){
 			Titanium.UI.setBackgroundColor('#fff');
-			messageLabel.text = 'tab group open event';
-			messageWin.open();
-	
-			setTimeout(function() {
-				messageWin.close({opacity:0,duration:500});
-			},1000);
 		}
 	});
 	
@@ -129,27 +92,10 @@ function ApplicationTabGroup() {
 		if (!e.tab) {
 			return;
 		}
-
-		// iOS fires with source tabGroup. Android with source tab
-		// if ((e.source == baseUITab) || (e.source == controlsTab) || (e.source == phoneTab) || (e.source == welcomeTab) || (e.source == mashupsTab) || (e.source == self)) {
-		if ((e.source == baseUITab) || (e.source == phoneTab) || (e.source == welcomeTab) || (e.source == mashupsTab) || (e.source == self)) {
-
-			messageLabel.text = 'tab changed to ' + e.index + ' old index ' + e.previousIndex;
-			messageWin.open();
-
-			setTimeout(function() {
-				Ti.API.info('tab = ' + e.tab.title + ', prevTab = ' + (e.previousTab ? e.previousTab.title : null));
-				messageLabel.text = 'active title ' + e.tab.title + ' old title ' + (e.previousTab ? e.previousTab.title : null);
-			}, 1000);
-
-			setTimeout(function() {
-				messageWin.close({
-					opacity : 0,
-					duration : 500
-				});
-			}, 2000);
-		}
-
+		
+		//containingTabWorkaround
+		self._activeTab = e.tab
+		Ti.API._activeTab = self._activeTab;
 	}); 
 	
 	self.addEventListener('blur', function(e) {
