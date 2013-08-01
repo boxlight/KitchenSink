@@ -1,21 +1,26 @@
-function getTweets() {
-	// set up a twitter screen name.
-	var screen_name = 'appcelerator';
+function twitter_feed(_args) {
 	win = Ti.UI.createWindow({
 		barColor : '#0f0f0f',
 		title : 'Twitter',
 		backgroundColor : '#fff'
 	});
-
+	
 	var data = [];
 
 	var Codebird = require('libs/codebird');
 	var codebird = new Codebird();
 	codebird.setConsumerKey('opI8mBMt8y3a0WGFAhKg', 'Z7mzW9k9KNuv2hUQixQn09BYtRPELWI8zgB5vOEwU8');
-	var bearerToken = Ti.App.Properties.getString('TwitterBearerToken', null);
+	// var bearerToken = Ti.App.Properties.getString('TwitterBearerToken', null);
 
 	function fetchTwitter() {
-		codebird.__call('search_tweets', "q=" + Ti.Network.encodeURIComponent("#awesome"), function(reply) {
+		codebird.__call(
+		"oauth_requestToken",
+	    {oauth_callback: "oob"},
+	    function(reply) {
+			Ti.API.info(reply);
+			codebird.__call("oauth_authorize", {}, function (auth_url) {
+				Ti.API.info(auth_url);
+			});
 			if (!reply || !reply.statuses) {
 				return;
 			}
@@ -121,8 +126,10 @@ function getTweets() {
 
 
 	win.addEventListener('open', function() {
+		fetchTwitter();
+		/*
 		if (bearerToken == null) {
-			codebird.__call('oauth2_token', {}, function(reply) {
+			codebird.__call('oauth2_toke	n', {}, function(reply) {
 				var bearer_token = reply.access_token;
 				codebird.setBearerToken(bearer_token);
 				Ti.App.Properties.setString('TwitterBearerToken', bearer_token);
@@ -133,9 +140,10 @@ function getTweets() {
 			codebird.setBearerToken(bearerToken);
 			fetchTwitter();
 		}
+		*/
 	});
 
 	return win;
-};
+}
 
-module.exports = getTweets;
+module.exports = twitter_feed;
