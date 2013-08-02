@@ -3,4 +3,5 @@ build/*
 build.log
 .fastdev.lock
 .DS_Store
+.settings/
 ._*
