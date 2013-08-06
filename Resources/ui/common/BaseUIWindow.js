@@ -10,24 +10,17 @@ function BaseUIWindow(title) {
 	
 	// create table view data object
 	var data = [
-		{title:'Tab Groups', hasChild:!isMobileWeb, test:'ui/common/baseui/tab_groups', touchEnabled:!isMobileWeb, color:isMobileWeb?"#aaa":"#000"},
-		{title:'Window Properties', hasChild:true, test:'ui/common/baseui/window_properties'},
-		{title:'Window Layout', hasChild:true, test:'ui/common/baseui/window_layout'},
 		{title:'Window (Standalone)', hasChild:true, test:'ui/common/baseui/window_standalone'},
 		{title:'Views', hasChild:true, test:'ui/common/baseui/views'},
 		{title:'Custom Events', hasChild:true, test:'ui/common/baseui/custom_events'},
-		{title:'Window Events', hasChild:true, test:'ui/common/baseui/window_events'},
-		{title:'Vertical Layout', hasChild:true, test:'ui/common/baseui/vertical_layout'},
-		{title:'Horizontal Layout', hasChild:true, test:'ui/common/baseui/horizontal_layout'}
+		{title:'Window Events', hasChild:true, test:'ui/common/baseui/window_events'}
 	];
 	
 	// add iphone specific tests
 	if (Titanium.Platform.name == 'iPhone OS')
 	{
-		data.push({title:'Tabs', hasChild:true, test:'ui/handheld/ios/baseui/tabs'});
 		data.push({title:'Window NavBar', hasChild:true, test:'ui/handheld/ios/baseui/window_navbar'});
 		data.push({title:'Window Toolbar', hasChild:true, test:'ui/handheld/ios/baseui/window_toolbar'});
-		data.push({title:'Window Constructor', hasChild:true, test:'ui/handheld/ios/baseui/window_constructor'});
 		data.push({title:'Animation', hasChild:true, test:'ui/handheld/ios/baseui/animation'});
 		data.push({title:'Nav Group', hasChild:true, test:'ui/handheld/ios/baseui/navgroup'});
 	
@@ -111,7 +104,7 @@ function BaseUIWindow(title) {
 	//  ADD EVENT LISTENERS FOR CUSTOM EVENTS
 	//
 	var win = Titanium.UI.createWindow({
-barColor:'#0f0f0f',
+		barColor:'#0f0f0f',
 		height:30,
 		width:250,
 		bottom:110,

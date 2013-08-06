@@ -5,32 +5,37 @@ function facebook_test(_args) {
 		backgroundColor : '#fff'
 	});
 	//create table view data object
-	var data = [{
-		title : 'Login/Logout',
-		hasChild : true,
-		test : 'ui/common/mashups/facebook_login_logout'
-	}, {
-		title : 'Friends',
-		hasChild : true,
-		test : 'ui/common/mashups/facebook_query'
-	}, {
-		title : 'Albums',
-		hasChild : true,
-		test : 'ui/common/mashups/facebook_albums'
-	}
-	/*
-	, {
-		title : 'Publish Stream',
-		hasChild : true,
-		test : 'ui/common/mashups/facebook_publish_stream'
-	}, {
-		title : 'Photos',
-		hasChild : true,
-		test : 'ui/common/mashups/facebook_photo_upload'
-	}
-	*/
+	var data = [
+		{
+			title : 'Login/Logout',
+			hasChild : true,
+			test : 'ui/common/mashups/facebook_login_logout'
+		},
+		{
+			title : 'Friends',
+			hasChild : true,
+			test : 'ui/common/mashups/facebook_query'
+		},
+		{
+			title : 'Publish Stream',
+			hasChild : true,
+			test : 'ui/common/mashups/facebook_publish_stream'
+		}
 	];
-
+	
+	var osname = Ti.Platform.osname;
+	var albumsWin = {
+		title : 'Albums',
+		hasChild : true
+	};
+	if (osname === 'iphone' || osname === 'ipad') {
+		albumsWin.test = 'ui/common/mashups/facebook_albums';
+	} else {
+		albumsWin.test = 'ui/common/mashups/facebook_albums_android';	
+	}
+	
+	data.push(albumsWin);
+	
 	// create table view
 	for (var i = 0; i < data.length; i++) {
 		data[i].color = '#000';

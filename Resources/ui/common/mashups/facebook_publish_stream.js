@@ -9,11 +9,11 @@ function fb_pub_stream(_args) {
 	}
 
 	var win = Ti.UI.createWindow({
-barColor:'#0f0f0f',
+		barColor:'#0f0f0f',
 		title:_args.title,
 		backroundColor:'#fff'
 	});
-	facebook.appid = "495338853813822";
+	facebook.appid = "199171466912517";
 	facebook.permissions = ['publish_stream', 'read_stream'];
 	
 	function showRequestResult(e) {
@@ -89,13 +89,7 @@ barColor:'#0f0f0f',
 	});
 	wall.addEventListener('click', function() {
 		var data = {
-			link: "https://developer.mozilla.org/en/JavaScript",
-			name: "Best online Javascript reference",
-			message: "Use Mozilla's online Javascript reference",
-			caption: "MDN Javascript Reference",
-			picture: "https://developer.mozilla.org/media/img/mdn-logo.png",
-			description: "This section of the site is dedicated to JavaScript-the-language, the parts that are not specific to web pages or other host environments...",
-			test: [ {foo:'Encoding test', bar:'Durp durp'}, 'test' ]
+			link: "https://www.facebook.com/BoxlightMedia?fref=ts"
 		};
 		facebook.requestWithGraphPath('me/feed', data, 'POST', showRequestResult);
 	});
@@ -109,12 +103,7 @@ barColor:'#0f0f0f',
 	wallDialog.addEventListener('click', function() {
 		iter++;
 		var data = {
-			link: "http://www.appcelerator.com",
-			name: "Appcelerator Titanium (iteration " + iter + ")",
-			message: "Awesome SDKs for building desktop and mobile apps",
-			caption: "Appcelerator Titanium (iteration " + iter + ")",
-			picture: "http://developer.appcelerator.com/assets/img/DEV_titmobile_image.png",
-			description: "You've got the ideas, now you've got the power. Titanium translates your hard won web skills..."
+			link: "https://www.facebook.com/BoxlightMedia?fref=ts"
 		};
 		facebook.dialog("feed", data, showRequestResult);
 	});

@@ -7,6 +7,21 @@ function fb_photo_query(_args) {
 	} else {
 		facebook = Titanium.Facebook;
 	}
+	
+	var previewWindow = Ti.UI.createWindow({
+		barColor:'#0f0f0f',
+		backgroundColor:'#000000',
+		title:'Preview'
+	});
+	var btnClosePreview = Ti.UI.createButton({
+		title:'Close',
+		style:Titanium.UI.iPhone.SystemButtonStyle.PLAIN
+	});
+	btnClosePreview.addEventListener('click', function() {
+		previewWindow.close();
+	});
+	previewWindow.setLeftNavButton(btnClosePreview);
+	var imageView = null;
 
 	var win = Ti.UI.createWindow({
 		barColor : '#0f0f0f',
@@ -59,6 +74,7 @@ function fb_photo_query(_args) {
 				albumRow.add(imageView);
 
 				albumRow.pid = row.pid;
+				albumRow.srcBig = row.src_big;
 
 				data[c] = albumRow;
 			}
@@ -66,13 +82,27 @@ function fb_photo_query(_args) {
 			tableView.setData(data, {
 				animationStyle : Titanium.UI.iPhone.RowAnimationStyle.DOWN
 			});
+			
+			tableView.addEventListener('click', function(e) {
+				if (e.rowData.srcBig) {
+					if (imageView) {
+						previewWindow.remove(imageView);
+					}
+					imageView = Titanium.UI.createImageView({
+						image: e.rowData.srcBig,
+						width: 325
+					});
+					previewWindow.add(imageView);
+					previewWindow.open({modal:true});
+				}
+			});
 
 			win.open({
 				modal : true
 			});
 		});
 	}
-
+	
 	if (!facebook.loggedIn) {
 		Ti.UI.createAlertDialog({
 			title : 'Facebook',

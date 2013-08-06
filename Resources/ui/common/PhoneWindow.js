@@ -14,7 +14,7 @@ function PhoneWindow(title) {
 	];
 	if (Ti.Platform.model != 'Kindle Fire') {
 		data.push({title:'Vibrate', hasChild:true, test:'ui/common/phone/vibrate'});
-		data.push({title:'Geolocation', hasChild:true, test:'ui/common/phone/geolocation'});
+		//data.push({title:'Geolocation', hasChild:true, test:'ui/common/phone/geolocation'});
 		data.push({title:'Accelerometer', hasChild:true, test:'ui/common/phone/accelerometer'});
 	}
 	if (Ti.Platform.model != 'Kindle Fire' && Ti.Platform.osname != 'mobileweb') {
@@ -47,10 +47,10 @@ function PhoneWindow(title) {
 			data.push({title:'Record Video', hasChild:true, test:'ui/common/phone/record_video'});
 		}
 		data.push({title:'Music', hasChild:true, test:'ui/handheld/ios/phone/music'});
-		data.push({title:'Proximity Events', hasChild:true, test:'/etc/todo'});
-		data.push({title:'App Badge', hasChild:true, test:'ui/handheld/ios/phone/app_badge'});
+		//data.push({title:'Proximity Events', hasChild:true, test:'/etc/todo'});
 		data.push({title:'Status Bar', hasChild:true, test:'ui/handheld/ios/phone/statusbar'});
-		data.push({title:'Push Notifications', hasChild:true, test:'ui/handheld/ios/phone/push_notification'});
+		//FIXME: Getting error during registration: no valid ‘aps-environment’ entitlement string found for application 
+		//data.push({title:'Push Notifications', hasChild:true, test:'ui/handheld/ios/phone/push_notification'});
 	}
 	
 	if (Titanium.Platform.name == 'android') {

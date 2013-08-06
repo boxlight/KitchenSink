@@ -8,7 +8,7 @@ function WelcomeWindow(title) {
 	
 	var webview = Ti.UI.createWebView({
 		backgroundColor:'white',
-		url:'html/welcome.html'
+		url:'/html/welcome.html'
 	});
 		
 	self.add(webview);
