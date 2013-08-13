@@ -15,7 +15,7 @@ barColor:'#0f0f0f',
 		{title:'Inline HTML', hasChild:true, innerHTML:'<html><body>Hello from inline HTML.</body></html>'},
 		{title:'Inline HTML w/ Trans Bg', hasChild:true, innerHTML:'<html><body><div style="color:white;">Hello from inline HTML. You should see white text and black background</div></body></html>', bgcolor:'black'},
 		{title:'Inline HTML w/ Color Bg', hasChild:true, innerHTML:'<html><body><div style="color:red;">Hello from inline HTML. You should see red text and yellow background</div></body></html>', bgcolor:'yellow'},
-		{title:'Basic Auth', hasChild:true, url: 'http://irisresearch.library.cornell.edu/control/authBasic/authTest/', username: 'test', password: 'this'},
+		{title:'Basic Auth', hasChild:true, url: 'http://dev2.boxlightmedia.com/kitchen-sink/authBasic/', username: 'user', password: 'password'},
 		{title:'Logging and Unicode', hasChild:true, url:'/etc/webview_logging.html'}
 	];
 	
