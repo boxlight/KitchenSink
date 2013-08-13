@@ -1,6 +1,6 @@
 function tialert(_args) {
 	var win = Titanium.UI.createWindow({
-barColor:'#0f0f0f',
+		barColor:'#0f0f0f',
 		title:_args.title
 	});
 	
@@ -11,30 +11,6 @@ barColor:'#0f0f0f',
 		title:'Alert Test',
 		message:'Hello World'
 	});
-	
-	var l = Titanium.UI.createLabel({
-		text:'I will tell you which alert buttons you clicked',
-		textAlign:'center',
-		bottom:80,
-		color:'#336699',
-		font:{fontSize:13},
-		width:'auto',
-		height:'auto'
-	});
-	
-	a.addEventListener('click', function(e)
-	{
-		if (Ti.Platform.osname === 'android' && a.buttonNames === null) {
-			l.text = '(There was no button to click)';
-		} else {
-			l.text = 'You clicked ' + e.index;
-		}
-	});
-	
-	//
-	// GENERIC LABEL
-	//
-	win.add(l);
 	
 	//
 	// SIMPLE ALERT
