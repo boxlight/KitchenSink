@@ -11,7 +11,7 @@
     <sdk-version>3.1.1.GA</sdk-version>
     <id>com.appcelerator.kitchensink</id>
     <name>KitchenSink</name>
-    <version>1.0 BL</version>
+    <version>1.0</version>
     <publisher>Boxlight Media</publisher>
     <url>http://www.boxlightmedia.com</url>
     <description>not specified</description>
