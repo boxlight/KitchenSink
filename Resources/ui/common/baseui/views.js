@@ -25,7 +25,6 @@ function views(_args) {
 		data.push({title:'Dashboard View', hasChild:true, test:'ui/handheld/ios/baseui/dashboard'});
 		data.push({title:'Mixing Views', hasChild:true, test:'ui/handheld/ios/baseui/mixing_views_1'});
 		data.push({title:'Gradient', hasChild:true, test:'ui/handheld/ios/baseui/gradient'});
-		data.push({title:'Hide/Show', hasChild:true, test:'ui/handheld/ios/baseui/view_hide_show'});
 		
 		Ti.include("/etc/version.js");
 	
