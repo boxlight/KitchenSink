@@ -16,6 +16,7 @@ function fb_login_logout(_args) {
 
 	facebook.appid = '199171466912517';
 	facebook.permissions = ['publish_stream', 'read_stream', 'user_photos'];
+	facebook.forceDialogAuth = true;
 
 	//
 	// Login Status
@@ -29,17 +30,17 @@ function fb_login_logout(_args) {
 	});
 	win.add(label);
 	
-	var forceButton = Ti.UI.createButton({
-		title:'Force dialog: '+ facebook.forceDialogAuth,
-		top:50,
-		width:160,
-		height:40
-	});
-	forceButton.addEventListener('click', function() {
-		facebook.forceDialogAuth = !facebook.forceDialogAuth;
-		forceButton.title = "Force dialog: "+facebook.forceDialogAuth;
-	});
-	win.add(forceButton);
+	// var forceButton = Ti.UI.createButton({
+		// title:'Force dialog: '+ facebook.forceDialogAuth,
+		// top:50,
+		// width:160,
+		// height:40
+	// });
+	// forceButton.addEventListener('click', function() {
+		// facebook.forceDialogAuth = !facebook.forceDialogAuth;
+		// forceButton.title = "Force dialog: "+facebook.forceDialogAuth;
+	// });
+	// win.add(forceButton);
 	
 	function updateLoginStatus() {
 		label.text = 'Logged In = ' + facebook.loggedIn;
