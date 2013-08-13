@@ -1,11 +1,11 @@
 function sound_remote(_args) {
 	var win = Titanium.UI.createWindow({
-barColor:'#0f0f0f',
+		barColor:'#0f0f0f',
 		title:_args.title
 	});
 	
 	var url = Titanium.UI.createTextField({
-		value:'http://watoo.net:8000/INTRODUCTION.mp3',
+		value:'http://dev2.boxlightmedia.com/kitchen-sink/song.mp3',
 		color:'#336699',
 		returnKeyType:Titanium.UI.RETURNKEY_GO,
 		keyboardType:Titanium.UI.KEYBOARD_URL,
