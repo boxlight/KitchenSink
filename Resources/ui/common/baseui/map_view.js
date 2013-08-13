@@ -34,32 +34,32 @@ barColor:'#0f0f0f',
 		rightButton: '/images/apple_logo.jpg',
 		myid:2 // CUSTOM ATTRIBUTE THAT IS PASSED INTO EVENT OBJECTS
 	});
-	
-	var atlantaParams = {
-			latitude:33.74511,
-			longitude:-84.38993,
-			title:"Atlanta, GA",
-			subtitle:'Atlanta Braves Stadium\nfoo',
+
+	var londonParams = {
+			latitude:51.5286416,
+			longitude:-0.1015987,
+			title:"London",
+			subtitle:'19 Shorts Gardens',
 			animate:true,
-			leftButton:'/images/atlanta.jpg',
+			leftButton:'/images/london.jpg',
 			myid:3 // CUSTOM ATTRIBUTE THAT IS PASSED INTO EVENT OBJECTS
 		};
 		
 	if (Ti.Platform.osname !== 'mobileweb') {
-		atlantaParams.rightButton = Titanium.UI.iPhone.SystemButton.DISCLOSURE;
+		londonParams.rightButton = Titanium.UI.iPhone.SystemButton.DISCLOSURE;
 	}
 	
 	if (!isAndroid) {
-		atlantaParams.pincolor = Titanium.Map.ANNOTATION_PURPLE;
+		londonParams.pincolor = Titanium.Map.ANNOTATION_PURPLE;
 	} else {
-		atlantaParams.pinImage = "/images/map-pin.png";
+		londonParams.pinImage = "/images/map-pin.png";
 	}
-	var atlanta = Titanium.Map.createAnnotation(atlantaParams);
+	var london = Titanium.Map.createAnnotation(londonParams);
 	
 	//
 	// PRE-DEFINED REGIONS
 	//
-	var regionAtlanta = {latitude:33.74511,longitude:-84.38993,animate:true,latitudeDelta:0.04, longitudeDelta:0.04};
+	var regionLondon = {latitude:51.5286416,longitude:-0.1015987,animate:true,latitudeDelta:0.04, longitudeDelta:0.04};
 	var regionSV = {latitude:37.337681,longitude:-122.038193,animate:true,latitudeDelta:0.04, longitudeDelta:0.04};
 	
 	//
@@ -67,17 +67,17 @@ barColor:'#0f0f0f',
 	//
 	var mapview = Titanium.Map.createView({
 		mapType: Titanium.Map.STANDARD_TYPE,
-		region:{latitude:33.74511, longitude:-84.38993, latitudeDelta:0.5, longitudeDelta:0.5},
+		region:{latitude:51.5286416,longitude:-0.1015987, latitudeDelta:0.5, longitudeDelta:0.5},
 		animate:true,
 		regionFit:true,
 		userLocation:true,
-		annotations:[atlanta,apple]
+		annotations:[london,apple]
 	});
 	
 	if (!isAndroid) {
-		mapview.addAnnotation(atlanta);
+		mapview.addAnnotation(london);
 	}
-	mapview.selectAnnotation(atlanta);
+	mapview.selectAnnotation(london);
 	win.add(mapview);
 	
 	//
@@ -85,7 +85,7 @@ barColor:'#0f0f0f',
 	//
 	
 	var removeAll = null;
-	var atl = null;
+	var lnd = null;
 	var sv = null;
 	var sat = null;
 	var std = null;
@@ -100,13 +100,13 @@ barColor:'#0f0f0f',
 			annotationsRemoved = true;
 		});
 	
-		atl.addEventListener('click', function() {
-			// set location to atlanta
-			mapview.setLocation(regionAtlanta);
+		lnd.addEventListener('click', function() {
+			// set location to london
+			mapview.setLocation(regionLondon);
 		
 			// activate annotation
 			if(!annotationsRemoved){
-				mapview.selectAnnotation(atlanta,true);
+				mapview.selectAnnotation(london,true);
 			}
 			Ti.API.error("CLICKED ATL");
 		});
@@ -158,9 +158,9 @@ barColor:'#0f0f0f',
 		//
 		
 		// button to change to ATL
-		atl = Titanium.UI.createButton({
+		lnd = Titanium.UI.createButton({
 			style:Titanium.UI.iPhone.SystemButtonStyle.BORDERED,
-			title:'ATL'
+			title:'LND'
 		});
 		// activate annotation
 		mapview.selectAnnotation(mapview.annotations[0].title,true);
@@ -208,13 +208,13 @@ barColor:'#0f0f0f',
 		
 		wireClickHandlers();
 		
-		win.setToolbar([flexSpace,std,flexSpace,hyb,flexSpace,sat,flexSpace,atl,flexSpace,sv,flexSpace,zoomin,flexSpace,zoomout,flexSpace]);
+		win.setToolbar([flexSpace,std,flexSpace,hyb,flexSpace,sat,flexSpace,lnd,flexSpace,sv,flexSpace,zoomin,flexSpace,zoomout,flexSpace]);
 	} else {
 		var activity = Ti.Android.currentActivity;
 		activity.onCreateOptionsMenu = function(e) {
 			var menu = e.menu;
 			
-			atl = menu.add({title : 'ATL'});
+			lnd = menu.add({title : 'LND'});
 			sv = menu.add({title : 'SV'});
 			sat = menu.add({title : 'Sat'});
 			std = menu.add({title : 'Std'});
@@ -265,16 +265,16 @@ barColor:'#0f0f0f',
 		var myid = (evt.annotation)?evt.annotation.myid:-1;
 	
 		Ti.API.info('mapview click clicksource = ' + clickSource);
-		// use custom event attribute to determine if atlanta annotation was clicked
+		// use custom event attribute to determine if london annotation was clicked
 		if (myid == 3 && evt.clicksource == 'rightButton')
 		{
 			//  change the annotation on the fly
-			evt.annotation.rightView = Titanium.UI.createView({width:20,height:20,backgroundColor:'red'});
-			evt.annotation.leftView = Titanium.UI.createView({width:20,height:20,backgroundColor:'#336699'});
-			evt.annotation.title = "Atlanta?";
+			// evt.annotation.rightView = Titanium.UI.createView({width:20,height:20,backgroundColor:'red'});
+			// evt.annotation.leftView = Titanium.UI.createView({width:20,height:20,backgroundColor:'#336699'});
+			evt.annotation.title = "Boxlight Media";
 			evt.annotation.pincolor = Titanium.Map.ANNOTATION_GREEN;
-			evt.annotation.subtitle = 'Appcelerator used to be near here';
-			evt.annotation.leftButton = 'images/appcelerator_small.png';
+			evt.annotation.subtitle = 'Home of leading mobile & facebook agency';
+			// evt.annotation.leftButton = 'images/appcelerator_small.png';
 	
 		}
 		if (myid == 2)
@@ -293,12 +293,12 @@ barColor:'#0f0f0f',
 	});
 	
 	// annotation click event listener (same as above except only fires for a given annotation)
-	atlanta.addEventListener('click', function(evt)
+	london.addEventListener('click', function(evt)
 	{
 		// get event properties
 		var annotation = evt.source;
 		var clicksource = evt.clicksource;
-		Ti.API.info('atlanta annotation click clicksource = ' + clicksource);
+		Ti.API.info('london annotation click clicksource = ' + clicksource);
 	});
 	
 	apple.addEventListener('click', function(evt)
