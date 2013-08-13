@@ -19,13 +19,7 @@ barColor:'#0f0f0f',
 	}
 	
 	data.push({title:'Remote Streaming', hasChild:true, test:'ui/common/phone/movie_remote'});
-	
-	// add iphone specific tests
-	if (Titanium.Platform.name == 'iPhone OS')
-	{
-		data.push({title:'Remote Streaming 2', hasChild:true, test:'ui/handheld/ios/phone/movie_remote2'});
-	}
-	
+		
 	// create table view
 	for (var i = 0; i < data.length; i++ ) { data[i].color = '#000'; data[i].font = {fontWeight:'bold'} };
 	var tableview = Titanium.UI.createTableView({

@@ -4,9 +4,9 @@ barColor:'#0f0f0f',
 		title:_args.title
 	});
 	
-	var contentURL = 'http://movies.apple.com/media/us/ipad/2010/tours/apple-ipad-video-us-20100127_r848-9cie.mov';
+	var contentURL = 'http://dev2.boxlightmedia.com/kitchen-sink/video.mov';
 	if (Ti.Platform.name == 'android') {
-		contentURL = "http://dts.podtrac.com/redirect.mp4/twit.cachefly.net/video/aaa/aaa0033/aaa0033_h264b_640x368_256.mp4";
+		contentURL = 'http://dev2.boxlightmedia.com/kitchen-sink/video.mp4';
 	}
 	var activeMovie = Titanium.Media.createVideoPlayer({
 		url: contentURL,
