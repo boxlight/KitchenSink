@@ -1,10 +1,10 @@
 function movie_remote(_args) {
 	var win = Titanium.UI.createWindow({
-barColor:'#0f0f0f',
+		barColor:'#0f0f0f',
 		title:_args.title
 	});
 	
-	var contentURL = 'http://dev2.boxlightmedia.com/kitchen-sink/video.mov';
+	var contentURL = 'http://dev2.boxlightmedia.com/kitchen-sink/sample_iTunes.mov';
 	if (Ti.Platform.name == 'android') {
 		contentURL = 'http://dev2.boxlightmedia.com/kitchen-sink/video.mp4';
 	}

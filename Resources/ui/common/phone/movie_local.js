@@ -11,6 +11,10 @@ barColor:'#0f0f0f',
 		mediaControlStyle: Titanium.Media.VIDEO_CONTROL_NONE // See TIMOB-2802, which may change this property name
 	};
 	
+	if (Titanium.Platform.osname == 'iPhone OS') {
+		options.url = '/etc/sample_iTunes.mov';
+	}
+	
 	if (Titanium.Platform.osname == "ipad") {
 		options.width = 400;
 		options.height = 300;
