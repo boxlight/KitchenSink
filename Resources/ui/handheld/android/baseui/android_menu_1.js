@@ -14,7 +14,7 @@ function android_menu1(_args) {
 	var l1 = Ti.UI.createLabel({
 		color : 'black',
 		text : 'The Android menu is only created on demand. You must click it once. Item 1 toggles between enabled and disabled every time menu is pressed. Items 1 & 3 should have icons.',
-		left : 10, top : 10, height : 80, right : 10
+		left : 10, top : 10, right : 10
 	});
 	win.add(l1);
 	

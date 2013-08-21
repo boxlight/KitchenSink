@@ -30,7 +30,7 @@ function android_win_softin(_args) {
 	
 	var l1 = Ti.UI.createLabel({ 
 		text : 'SOFT_INPUT_ADJUST_PAN', color : 'black',
-		left : 60, height : 30, right : 10, top : 100
+		left : 60, right : 10, top : 100
 	});
 	win.add(l1);
 	
@@ -42,7 +42,7 @@ function android_win_softin(_args) {
 	
 	var l2 = Ti.UI.createLabel({ 
 		text : 'SOFT_INPUT_ADJUST_RESIZE', color : 'black',
-		left : 60, height : 30, right : 10, top : 130
+		left : 60, right : 10, top : 130
 	});
 	win.add(l2);
 	
@@ -54,7 +54,7 @@ function android_win_softin(_args) {
 	
 	var l3 = Ti.UI.createLabel({ 
 		text : 'SOFT_INPUT_ADJUST_UNSPECIFIED', color : 'black',
-		left : 60, height : 30, right : 10, top : 160
+		left : 60, right : 10, top : 160
 	});
 	win.add(l3);
 	
@@ -79,7 +79,7 @@ function android_win_softin(_args) {
 	//-------------------------------------------------------
 	
 	var launch = Ti.UI.createButton({
-		left : 10, height : 30, bottom : 10, right : 10,
+		left : 10, bottom : 10, right : 10,
 		title : 'Launch'
 	});
 	launch.addEventListener('click', function() {
