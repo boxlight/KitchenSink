@@ -1,16 +1,15 @@
 function webviews(_args) {
 	var win = Titanium.UI.createWindow({
-barColor:'#0f0f0f',
+		barColor:'#0f0f0f',
 		title:_args.title,
 		backgroundColor:'#fff'
 	});
-	
-	
+
 	// create table view data object
 	var data = [
 		{title:'External URL', hasChild:true, url:'http://www.google.com'},
 		{title:'Local URL', hasChild:true, url:'/etc/local_webview.html'},
-		{title:'XHR to Filesystem', hasChild:true},	
+		{title:'XHR to Filesystem', hasChild:true},
 		{title:'Image URL', hasChild:true, url:'http://dev2.boxlightmedia.com/kitchen-sink/image.png'},
 		{title:'Inline HTML', hasChild:true, innerHTML:'<html><body>Hello from inline HTML.</body></html>'},
 		{title:'Inline HTML w/ Trans Bg', hasChild:true, innerHTML:'<html><body><div style="color:white;">Hello from inline HTML. You should see white text and black background</div></body></html>', bgcolor:'black'},
@@ -18,7 +17,7 @@ barColor:'#0f0f0f',
 		{title:'Basic Auth', hasChild:true, url: 'http://dev2.boxlightmedia.com/kitchen-sink/authBasic/', username: 'user', password: 'password'},
 		{title:'Logging and Unicode', hasChild:true, url:'/etc/webview_logging.html'}
 	];
-	
+
 	// add iphone specific tests
 	if (Titanium.Platform.name == 'iPhone OS')
 	{
@@ -35,16 +34,16 @@ barColor:'#0f0f0f',
 		// But users can make sure that embedded webviews are anchored in the usual way.
 		data.push({title:'Auto Size', auto:true, hasChild:true, innerHTML:'<html><body style="height:200px;width:100px;border:1px solid #ccc;padding:10px">200 px height, 100 px width.</body></html>'});
 		data.push({title:'Partial Auto', hasChild:true, partial:true, innerHTML:'<html><body><div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div><hr/><div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div></body></html>'});
-		
+
 		// this should work on android too, right?
 		data.push({title:'HTML5 Video', auto:true, hasChild:true, url:'/etc/html5video.html'});
-		
+
 		// can't test youtube in simulator
 		Ti.API.info('MODEL:'+Ti.Platform.model);
 		if (Titanium.Platform.model !== 'Simulator')
 		{
 			Ti.include("/etc/version.js");
-	
+
 			if (isiOS6Plus())
 			{
 				data.push({title:'Youtube Video', auto:true, hasChild:true, url:'/etc/youtubeiOS6.html'});
@@ -53,15 +52,15 @@ barColor:'#0f0f0f',
 				data.push({title:'Youtube Video', auto:true, hasChild:true, url:'/etc/youtube.html'});
 			}
 		}
-		
+
 	}
-	
+
 	// create table view
 	for (var i = 0; i < data.length; i++ ) { data[i].color = '#000'; data[i].font = {fontWeight:'bold'} };
 	var tableview = Titanium.UI.createTableView({
 		data:data
 	});
-	
+
 	// create table view event listener
 	tableview.addEventListener('click', function(e)
 	{
@@ -84,14 +83,14 @@ barColor:'#0f0f0f',
 			Titanium.UI.LANDSCAPE_LEFT,
 			Titanium.UI.LANDSCAPE_RIGHT
 		];
-	
+
 		if (rowdata.auto === true)
 		{
-			webview = Ti.UI.createWebView({height:Ti.UI.SIZE,width:Ti.UI.SIZE});
+			webview = Ti.UI.createWebView({height:Ti.UI.SIZE,width:Ti.UI.SIZE, scalesPageToFit: true});
 		}
 		else
 		{
-			webview = Ti.UI.createWebView();
+			webview = Ti.UI.createWebView({scalesPageToFit: true});
 		}
 		if ((Ti.Platform.osname === 'iphone') || (Ti.Platform.osname === 'ipad')) {
 			var reloadButton = Titanium.UI.createButton({
@@ -103,7 +102,7 @@ barColor:'#0f0f0f',
 			});
 			w.setRightNavButton(reloadButton);
 		}
-	
+
 		//	webview.addEventListener('singletap', function(e)
 		//	{
 		//		alert('singletap');
@@ -119,16 +118,16 @@ barColor:'#0f0f0f',
 			{
 				webview.setHtml(this.responseText, { baseURL: baseURL });
 			};
-			
+
 			// open the client
 			xhr.open('GET',baseURL);
-			
+
 			// google will send back WAP if you make XHR request to it and he doesn't think it's really an HTML browser
 			// we're going to spoof him to think we're Safari on iPhone
 			xhr.setRequestHeader('User-Agent','Mozilla/5.0 (iPhone; U; CPU like Mac OS X; en) AppleWebKit/420+ (KHTML, like Gecko) Version/3.0 Mobile/1A537a Safari/419.3');
-	
+
 			// send the data
-			xhr.send();   
+			xhr.send();
 		}
 		else
 		{
@@ -149,20 +148,21 @@ barColor:'#0f0f0f',
 				// and either allow pinch/zoom (set to true) or not (set to false)
 				webview.scalesPageToFit = true;
 			}
-			
+
 			if (rowdata.username)
 			{
 				webview.setBasicAuthentication(rowdata.username, rowdata.password);
 			}
-			
+
 			// test out applicationDataDir file usage in web view
 			var f1 = Titanium.Filesystem.getFile(Titanium.Filesystem.resourcesDirectory, 'images', 'apple_logo.jpg');
 			var f2 = Titanium.Filesystem.getFile(Titanium.Filesystem.applicationDataDirectory,'apple_logo.jpg');
 			f2.write(f1);
-			
+
 			webview.addEventListener('load',function(e)
 			{
 				Ti.API.debug("webview loaded: "+e.url);
+				webview.scalesPageToFit = true;
 				if (rowdata.evaljs)
 				{
 					alert("JS result was: "+webview.evalJS("window.my_global_variable")+". should be 10");
@@ -183,7 +183,7 @@ barColor:'#0f0f0f',
 				webview.borderWidth=5;
 				webview.borderColor = 'red';
 			}
-			
+
 			var toolbar = null;
 			// create toolbar for local webiew
 			if (e.index==1)
@@ -200,7 +200,7 @@ barColor:'#0f0f0f',
 					w.add(toolbar);
 				}
 			}
-			
+
 			if (rowdata.controls)
 			{
 				// test web controls
@@ -233,16 +233,16 @@ barColor:'#0f0f0f',
 					}
 				});
 			}
-			
+
 			if (rowdata.partial)
 			{
 				webview.top = 100;
 				webview.bottom = 0;
 			}
-			
+
 			w.add(webview);
-			
-	
+
+
 			function hideToolbar(e)
 			{
 				Ti.API.info('received hidetoolbar event, foo = ' + e.foo);
@@ -256,20 +256,20 @@ barColor:'#0f0f0f',
 			}
 			// hide toolbar for local web view
 			Ti.App.addEventListener('webview_hidetoolbar', hideToolbar);
-			
+
 			w.addEventListener('close',function(e)
 			{
 				Ti.API.info("window was closed");
-				
+
 				// remove our global app event listener from this specific
 				// window instance when the window is closed
 				Ti.App.removeEventListener('webview_hidetoolbar',hideToolbar);
 			});
-			_args.containingTab.open(w);		
+			_args.containingTab.open(w);
 		}
-	
+
 	});
-	
+
 	// add table view to the window
 	win.add(tableview);
 	return win;
